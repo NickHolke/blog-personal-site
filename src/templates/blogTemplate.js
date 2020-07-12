@@ -1,6 +1,14 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+// styles
+import {
+  headerImage,
+  imageWrapper,
+  titleWrapper,
+  blogPost,
+  content,
+} from "./blogTemplate.module.scss"
 
 export default function Template({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
@@ -10,14 +18,16 @@ export default function Template({ data }) {
   console.log(featuredImageFluid)
   return (
     <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <Img fluid={featuredImageFluid} />
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+      <div className={blogPost}>
+        <div className={imageWrapper}>
+          <div className={titleWrapper}>
+            <h1>{frontmatter.title}</h1>
+            <h2>{frontmatter.date}</h2>
+            <h3>by Nick Holke</h3>
+          </div>
+          <Img className={headerImage} fluid={featuredImageFluid} />
+        </div>
+        <div className={content} dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </div>
   )

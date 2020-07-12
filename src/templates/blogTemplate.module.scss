@@ -1,0 +1,41 @@
+.blogPost {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+.imageWrapper {
+  height: 100vh;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.297);
+    z-index: 1;
+  }
+}
+
+.headerImage {
+  height: 100%;
+}
+
+.titleWrapper {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+.content {
+  padding: 2rem 18rem;
+}
